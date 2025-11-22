@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مسابقة يوم البيئة الوطني</title>
+    <link rel="stylesheet" href="./index_files/index-DN0rDm3f.css" />
+    <style type="text/css">
+      :where(html[dir="ltr"]),
+      :where([data-sonner-toaster][dir="ltr"]) {
+        --toast-icon-margin-start: -3px;
+        --toast-icon-margin-end: 4px;
+        --toast-svg-margin-start: -1px;
+        --toast-svg-margin-end: 0px;
+        --toast-button-margin-start: auto;
+        --toast-button-margin-end: 0;
+        --toast-close-button-start: 0;
+        --toast-close-button-end: unset;
+        --toast-close-button-transform: translate(-35%, -35%);
+      }
+      :where(html[dir="rtl"]),
+      :where([data-sonner-toaster][dir="rtl"]) {
+        --toast-icon-margin-start: 4px;
+        --toast-icon-margin-end: -3px;
+        --toast-svg-margin-start: 0px;
+        --toast-svg-margin-end: -1px;
+        --toast-button-margin-start: 0;
+        --toast-button-margin-end: auto;
+        --toast-close-button-start: unset;
+        --toast-close-button-end: 0;
+        --toast-close-button-transform: translate(35%, -35%);
+      }
+      :where([data-sonner-toaster]) {
+        position: fixed;
+        width: var(--width);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+          Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        --gray1: hsl(0, 0%, 99%);
+        --gray2: hsl(0, 0%, 97.3%);
+        --gray3: hsl(0, 0%, 95.1%);
+        --gray4: hsl(0, 0%, 93%);
+        --gray5: hsl(0, 0%, 90.9%);
+        --gray6: hsl(0, 0%, 88.7%);
+        --gray7: hsl(0, 0%, 85.8%);
+        --gray8: hsl(0, 0%, 78%);
+        --gray9: hsl(0, 0%, 56.1%);
+        --gray10: hsl(0, 0%, 52.3%);
+        --gray11: hsl(0, 0%, 43.5%);
+        --gray12: hsl(0, 0%, 9%);
+        --border-radius: 8px;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        outline: none;
+        z-index: 999999999;
+        transition: transform 0.4s ease;
+      }
+      :where([data-sonner-toaster][data-lifted="true"]) {
+        transform: translateY(-10px);
+      }
+      @media (hover: none) and (pointer: coarse) {
+        :where([data-sonner-toaster][data-lifted="true"]) {
+          transform: none;
+        }
+      }
+      :where([data-sonner-toaster][data-x-position="right"]) {
+        right: var(--offset-right);
+      }
+      :where([data-sonner-toaster][data-x-position="left"]) {
+        left: var(--offset-left);
+      }
+      :where([data-sonner-toaster][data-x-position="center"]) {
+        left: 50%;
+        transform: translate(-50%);
+      }
+      :where([data-sonner-toaster][data-y-position="top"]) {
+        top: var(--offset-top);
+      }
+      :where([data-sonner-toaster][data-y-position="bottom"]) {
+        bottom: var(--offset-bottom);
+      }
+      :where([data-sonner-toast]) {
+        --y: translateY(100%);
+        --lift-amount: calc(var(--lift) * var(--gap));
+        z-index: var(--z-index);
+        position: absolute;
+        opacity: 0;
+        transform: var(--y);
+        filter: blur(0);
+        touch-action: none;
+        transition: transform 0.4s, opacity 0.4s, height 0.4s, box-shadow 0.2s;
+        box-sizing: border-box;
+        outline: none;
+        overflow-wrap: anywhere;
+      }
+      :where([data-sonner-toast][data-styled="true"]) {
+        padding: 16px;
+        background: var(--normal-bg);
+        border: 1px solid var(--normal-border);
+        color: var(--normal-text);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 12px #0000001a;
+        width: var(--width);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      :where([data-sonner-toast]:focus-visible) {
+        box-shadow: 0 4px 12px #0000001a, 0 0 0 2px #0003;
+      }
+      :where([data-sonner-toast][data-y-position="top"]) {
+        top: 0;
+        --y: translateY(-100%);
+        --lift: 1;
+        --lift-amount: calc(1 * var(--gap));
+      }
+      :where([data-sonner-toast][data-y-position="bottom"]) {
+        bottom: 0;
+        --y: translateY(100%);
+        --lift: -1;
+        --lift-amount: calc(var(--lift) * var(--gap));
+      }
+      :where([data-sonner-toast]) :where([data-description]) {
+        font-weight: 400;
+        line-height: 1.4;
+        color: inherit;
+      }
+      :where([data-sonner-toast]) :where([data-title]) {
+        font-weight: 500;
+        line-height: 1.5;
+        color: inherit;
+      }
+      :where([data-sonner-toast]) :where([data-icon]) {
+        display: flex;
+        height: 16px;
+        width: 16px;
+        position: relative;
+        justify-content: flex-start;
+        align-items: center;
+        flex-shrink: 0;
+        margin-left: var(--toast-icon-margin-start);
+        margin-right: var(--toast-icon-margin-end);
+      }
+      :where([data-sonner-toast][data-promise="true"])
+        :where([data-icon])
+        > svg {
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: center;
+        animation: sonner-fade-in 0.3s ease forwards;
+      }
+      :where([data-sonner-toast]) :where([data-icon]) > * {
+        flex-shrink: 0;
+      }
+      :where([data-sonner-toast]) :where([data-icon]) svg {
+        margin-left: var(--toast-svg-margin-start);
+        margin-right: var(--toast-svg-margin-end);
+      }
+      :where([data-sonner-toast]) :where([data-content]) {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      [data-sonner-toast][data-styled="true"] [data-button] {
+        border-radius: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+        height: 24px;
+        font-size: 12px;
+        color: var(--normal-bg);
+        background: var(--normal-text);
+        margin-left: var(--toast-button-margin-start);
+        margin-right: var(--toast-button-margin-end);
+        border: none;
+        cursor: pointer;
+        outline: none;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        transition: opacity 0.4s, box-shadow 0.2s;
+      }
+      :where([data-sonner-toast]) :where([data-button]):focus-visible {
+        box-shadow: 0 0 0 2px #0006;
+      }
+      :where([data-sonner-toast]) :where([data-button]):first-of-type {
+        margin-left: var(--toast-button-margin-start);
+        margin-right: var(--toast-button-margin-end);
+      }
+      :where([data-sonner-toast]) :where([data-cancel]) {
+        color: var(--normal-text);
+        background: rgba(0, 0, 0, 0.08);
+      }
+      :where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]) {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      :where([data-sonner-toast]) :where([data-close-button]) {
+        position: absolute;
+        left: var(--toast-close-button-start);
+        right: var(--toast-close-button-end);
+        top: 0;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        color: var(--gray12);
+        border: 1px solid var(--gray4);
+        transform: var(--toast-close-button-transform);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1;
+        transition: opacity 0.1s, background 0.2s, border-color 0.2s;
+      }
+      [data-sonner-toast] [data-close-button] {
+        background: var(--gray1);
+      }
+      :where([data-sonner-toast]) :where([data-close-button]):focus-visible {
+        box-shadow: 0 4px 12px #0000001a, 0 0 0 2px #0003;
+      }
+      :where([data-sonner-toast]) :where([data-disabled="true"]) {
+        cursor: not-allowed;
+      }
+      :where([data-sonner-toast]):hover :where([data-close-button]):hover {
+        background: var(--gray2);
+        border-color: var(--gray5);
+      }
+      :where([data-sonner-toast][data-swiping="true"]):before {
+        content: "";
+        position: absolute;
+        left: -50%;
+        right: -50%;
+        height: 100%;
+        z-index: -1;
+      }
+      :where(
+          [data-sonner-toast][data-y-position="top"][data-swiping="true"]
+        ):before {
+        bottom: 50%;
+        transform: scaleY(3) translateY(50%);
+      }
+      :where(
+          [data-sonner-toast][data-y-position="bottom"][data-swiping="true"]
+        ):before {
+        top: 50%;
+        transform: scaleY(3) translateY(-50%);
+      }
+      :where(
+          [data-sonner-toast][data-swiping="false"][data-removed="true"]
+        ):before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transform: scaleY(2);
+      }
+      :where([data-sonner-toast]):after {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: calc(var(--gap) + 1px);
+        bottom: 100%;
+        width: 100%;
+      }
+      :where([data-sonner-toast][data-mounted="true"]) {
+        --y: translateY(0);
+        opacity: 1;
+      }
+      :where([data-sonner-toast][data-expanded="false"][data-front="false"]) {
+        --scale: var(--toasts-before) * 0.05 + 1;
+        --y: translateY(calc(var(--lift-amount) * var(--toasts-before)))
+          scale(calc(-1 * var(--scale)));
+        height: var(--front-toast-height);
+      }
+      :where([data-sonner-toast]) > * {
+        transition: opacity 0.4s;
+      }
+      :where(
+          [data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"]
+        )
+        > * {
+        opacity: 0;
+      }
+      :where([data-sonner-toast][data-visible="false"]) {
+        opacity: 0;
+        pointer-events: none;
+      }
+      :where([data-sonner-toast][data-mounted="true"][data-expanded="true"]) {
+        --y: translateY(calc(var(--lift) * var(--offset)));
+        height: var(--initial-height);
+      }
+      :where(
+          [data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]
+        ) {
+        --y: translateY(calc(var(--lift) * -100%));
+        opacity: 0;
+      }
+      :where(
+          [data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]
+        ) {
+        --y: translateY(
+          calc(var(--lift) * var(--offset) + var(--lift) * -100%)
+        );
+        opacity: 0;
+      }
+      :where(
+          [data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]
+        ) {
+        --y: translateY(40%);
+        opacity: 0;
+        transition: transform 0.5s, opacity 0.2s;
+      }
+      :where(
+          [data-sonner-toast][data-removed="true"][data-front="false"]
+        ):before {
+        height: calc(var(--initial-height) + 20%);
+      }
+      [data-sonner-toast][data-swiping="true"] {
+        transform: var(--y) translateY(var(--swipe-amount-y, 0px))
+          translate(var(--swipe-amount-x, 0px));
+        transition: none;
+      }
+      [data-sonner-toast][data-swiped="true"] {
+        user-select: none;
+      }
+      [data-sonner-toast][data-swipe-out="true"][data-y-position="bottom"],
+      [data-sonner-toast][data-swipe-out="true"][data-y-position="top"] {
+        animation-duration: 0.2s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      [data-sonner-toast][data-swipe-out="true"][data-swipe-direction="left"] {
+        animation-name: swipe-out-left;
+      }
+      [data-sonner-toast][data-swipe-out="true"][data-swipe-direction="right"] {
+        animation-name: swipe-out-right;
+      }
+      [data-sonner-toast][data-swipe-out="true"][data-swipe-direction="up"] {
+        animation-name: swipe-out-up;
+      }
+      [data-sonner-toast][data-swipe-out="true"][data-swipe-direction="down"] {
+        animation-name: swipe-out-down;
+      }
+      @keyframes swipe-out-left {
+        0% {
+          transform: var(--y) translate(var(--swipe-amount-x));
+          opacity: 1;
+        }
+        to {
+          transform: var(--y) translate(calc(var(--swipe-amount-x) - 100%));
+          opacity: 0;
+        }
+      }
+      @keyframes swipe-out-right {
+        0% {
+          transform: var(--y) translate(var(--swipe-amount-x));
+          opacity: 1;
+        }
+        to {
+          transform: var(--y) translate(calc(var(--swipe-amount-x) + 100%));
+          opacity: 0;
+        }
+      }
+      @keyframes swipe-out-up {
+        0% {
+          transform: var(--y) translateY(var(--swipe-amount-y));
+          opacity: 1;
+        }
+        to {
+          transform: var(--y) translateY(calc(var(--swipe-amount-y) - 100%));
+          opacity: 0;
+        }
+      }
+      @keyframes swipe-out-down {
+        0% {
+          transform: var(--y) translateY(var(--swipe-amount-y));
+          opacity: 1;
+        }
+        to {
+          transform: var(--y) translateY(calc(var(--swipe-amount-y) + 100%));
+          opacity: 0;
+        }
+      }
+      @media (max-width: 600px) {
+        [data-sonner-toaster] {
+          position: fixed;
+          right: var(--mobile-offset-right);
+          left: var(--mobile-offset-left);
+          width: 100%;
+        }
+        [data-sonner-toaster][dir="rtl"] {
+          left: calc(var(--mobile-offset-left) * -1);
+        }
+        [data-sonner-toaster] [data-sonner-toast] {
+          left: 0;
+          right: 0;
+          width: calc(100% - var(--mobile-offset-left) * 2);
+        }
+        [data-sonner-toaster][data-x-position="left"] {
+          left: var(--mobile-offset-left);
+        }
+        [data-sonner-toaster][data-y-position="bottom"] {
+          bottom: var(--mobile-offset-bottom);
+        }
+        [data-sonner-toaster][data-y-position="top"] {
+          top: var(--mobile-offset-top);
+        }
+        [data-sonner-toaster][data-x-position="center"] {
+          left: var(--mobile-offset-left);
+          right: var(--mobile-offset-right);
+          transform: none;
+        }
+      }
+      [data-sonner-toaster][data-theme="light"] {
+        --normal-bg: #fff;
+        --normal-border: var(--gray4);
+        --normal-text: var(--gray12);
+        --success-bg: hsl(143, 85%, 96%);
+        --success-border: hsl(145, 92%, 91%);
+        --success-text: hsl(140, 100%, 27%);
+        --info-bg: hsl(208, 100%, 97%);
+        --info-border: hsl(221, 91%, 91%);
+        --info-text: hsl(210, 92%, 45%);
+        --warning-bg: hsl(49, 100%, 97%);
+        --warning-border: hsl(49, 91%, 91%);
+        --warning-text: hsl(31, 92%, 45%);
+        --error-bg: hsl(359, 100%, 97%);
+        --error-border: hsl(359, 100%, 94%);
+        --error-text: hsl(360, 100%, 45%);
+      }
+      [data-sonner-toaster][data-theme="light"]
+        [data-sonner-toast][data-invert="true"] {
+        --normal-bg: #000;
+        --normal-border: hsl(0, 0%, 20%);
+        --normal-text: var(--gray1);
+      }
+      [data-sonner-toaster][data-theme="dark"]
+        [data-sonner-toast][data-invert="true"] {
+        --normal-bg: #fff;
+        --normal-border: var(--gray3);
+        --normal-text: var(--gray12);
+      }
+      [data-sonner-toaster][data-theme="dark"] {
+        --normal-bg: #000;
+        --normal-bg-hover: hsl(0, 0%, 12%);
+        --normal-border: hsl(0, 0%, 20%);
+        --normal-border-hover: hsl(0, 0%, 25%);
+        --normal-text: var(--gray1);
+        --success-bg: hsl(150, 100%, 6%);
+        --success-border: hsl(147, 100%, 12%);
+        --success-text: hsl(150, 86%, 65%);
+        --info-bg: hsl(215, 100%, 6%);
+        --info-border: hsl(223, 100%, 12%);
+        --info-text: hsl(216, 87%, 65%);
+        --warning-bg: hsl(64, 100%, 6%);
+        --warning-border: hsl(60, 100%, 12%);
+        --warning-text: hsl(46, 87%, 65%);
+        --error-bg: hsl(358, 76%, 10%);
+        --error-border: hsl(357, 89%, 16%);
+        --error-text: hsl(358, 100%, 81%);
+      }
+      [data-sonner-toaster][data-theme="dark"]
+        [data-sonner-toast]
+        [data-close-button] {
+        background: var(--normal-bg);
+        border-color: var(--normal-border);
+        color: var(--normal-text);
+      }
+      [data-sonner-toaster][data-theme="dark"]
+        [data-sonner-toast]
+        [data-close-button]:hover {
+        background: var(--normal-bg-hover);
+        border-color: var(--normal-border-hover);
+      }
+      [data-rich-colors="true"][data-sonner-toast][data-type="success"],
+      [data-rich-colors="true"][data-sonner-toast][data-type="success"]
+        [data-close-button] {
+        background: var(--success-bg);
+        border-color: var(--success-border);
+        color: var(--success-text);
+      }
+      [data-rich-colors="true"][data-sonner-toast][data-type="info"],
+      [data-rich-colors="true"][data-sonner-toast][data-type="info"]
+        [data-close-button] {
+        background: var(--info-bg);
+        border-color: var(--info-border);
+        color: var(--info-text);
+      }
+      [data-rich-colors="true"][data-sonner-toast][data-type="warning"],
+      [data-rich-colors="true"][data-sonner-toast][data-type="warning"]
+        [data-close-button] {
+        background: var(--warning-bg);
+        border-color: var(--warning-border);
+        color: var(--warning-text);
+      }
+      [data-rich-colors="true"][data-sonner-toast][data-type="error"],
+      [data-rich-colors="true"][data-sonner-toast][data-type="error"]
+        [data-close-button] {
+        background: var(--error-bg);
+        border-color: var(--error-border);
+        color: var(--error-text);
+      }
+      .sonner-loading-wrapper {
+        --size: 16px;
+        height: var(--size);
+        width: var(--size);
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+      }
+      .sonner-loading-wrapper[data-visible="false"] {
+        transform-origin: center;
+        animation: sonner-fade-out 0.2s ease forwards;
+      }
+      .sonner-spinner {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        height: var(--size);
+        width: var(--size);
+      }
+      .sonner-loading-bar {
+        animation: sonner-spin 1.2s linear infinite;
+        background: var(--gray11);
+        border-radius: 6px;
+        height: 8%;
+        left: -10%;
+        position: absolute;
+        top: -3.9%;
+        width: 24%;
+      }
+      .sonner-loading-bar:nth-child(1) {
+        animation-delay: -1.2s;
+        transform: rotate(0.0001deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(2) {
+        animation-delay: -1.1s;
+        transform: rotate(30deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(3) {
+        animation-delay: -1s;
+        transform: rotate(60deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(4) {
+        animation-delay: -0.9s;
+        transform: rotate(90deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(5) {
+        animation-delay: -0.8s;
+        transform: rotate(120deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(6) {
+        animation-delay: -0.7s;
+        transform: rotate(150deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(7) {
+        animation-delay: -0.6s;
+        transform: rotate(180deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(8) {
+        animation-delay: -0.5s;
+        transform: rotate(210deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(9) {
+        animation-delay: -0.4s;
+        transform: rotate(240deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(10) {
+        animation-delay: -0.3s;
+        transform: rotate(270deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(11) {
+        animation-delay: -0.2s;
+        transform: rotate(300deg) translate(146%);
+      }
+      .sonner-loading-bar:nth-child(12) {
+        animation-delay: -0.1s;
+        transform: rotate(330deg) translate(146%);
+      }
+      @keyframes sonner-fade-in {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes sonner-fade-out {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        to {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+      }
+      @keyframes sonner-spin {
+        0% {
+          opacity: 1;
+        }
+        to {
+          opacity: 0.15;
+        }
+      }
+      @media (prefers-reduced-motion) {
+        [data-sonner-toast],
+        [data-sonner-toast] > *,
+        .sonner-loading-bar {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+      .sonner-loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+        transition: opacity 0.2s, transform 0.2s;
+      }
+      .sonner-loader[data-visible="false"] {
+        opacity: 0;
+        transform: scale(0.8) translate(-50%, -50%);
+      }
+    </style>
+    <style>
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+          U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+          U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+          U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3GUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3iUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      /* greek-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3CUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+1F00-1FFF;
+      }
+      /* greek */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3-UBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C,
+          U+038E-03A1, U+03A3-03FF;
+      }
+      /* math */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMawCUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315,
+          U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A,
+          U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1,
+          U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038,
+          U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071,
+          U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF,
+          U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192,
+          U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214,
+          U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A,
+          U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF,
+          U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F,
+          U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030,
+          U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+      }
+      /* symbols */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMaxKUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0,
+          U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF,
+          U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F,
+          U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922,
+          U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB,
+          U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB,
+          U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF,
+          U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E,
+          U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F,
+          U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE,
+          U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415,
+          U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449,
+          U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3,
+          U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF,
+          U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE,
+          U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A,
+          U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691,
+          U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC,
+          U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3,
+          U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847,
+          U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB,
+          U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996,
+          U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6,
+          U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3OUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+          U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3KUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3GUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3iUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      /* greek-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3CUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+1F00-1FFF;
+      }
+      /* greek */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3-UBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C,
+          U+038E-03A1, U+03A3-03FF;
+      }
+      /* math */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMawCUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315,
+          U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A,
+          U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1,
+          U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038,
+          U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071,
+          U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF,
+          U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192,
+          U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214,
+          U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A,
+          U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF,
+          U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F,
+          U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030,
+          U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+      }
+      /* symbols */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMaxKUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0,
+          U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF,
+          U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F,
+          U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922,
+          U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB,
+          U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB,
+          U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF,
+          U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E,
+          U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F,
+          U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE,
+          U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415,
+          U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449,
+          U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3,
+          U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF,
+          U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE,
+          U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A,
+          U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691,
+          U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC,
+          U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3,
+          U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847,
+          U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB,
+          U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996,
+          U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6,
+          U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3OUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+          U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3KUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3GUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3iUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      /* greek-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3CUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+1F00-1FFF;
+      }
+      /* greek */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3-UBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C,
+          U+038E-03A1, U+03A3-03FF;
+      }
+      /* math */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMawCUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315,
+          U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A,
+          U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1,
+          U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038,
+          U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071,
+          U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF,
+          U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192,
+          U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214,
+          U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A,
+          U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF,
+          U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F,
+          U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030,
+          U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+      }
+      /* symbols */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMaxKUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0,
+          U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF,
+          U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F,
+          U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922,
+          U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB,
+          U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB,
+          U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF,
+          U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E,
+          U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F,
+          U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE,
+          U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415,
+          U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449,
+          U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3,
+          U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF,
+          U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE,
+          U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A,
+          U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691,
+          U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC,
+          U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3,
+          U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847,
+          U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB,
+          U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996,
+          U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6,
+          U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3OUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+          U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3KUBGEe.woff2)
+          format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v50/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="chrome-extension://ihcjicgdanjaechkgeegckofjjedodee/app/content-style.css"
+    />
+  </head>
+
+  <body>
+    <span id="warning-container"><i data-reactroot=""></i></span>
+    <div id="root" bis_skin_checked="1">
+      <div
+        role="region"
+        aria-label="Notifications (F8)"
+        tabindex="-1"
+        style="pointer-events: none"
+        bis_skin_checked="1"
+      >
+        <ol
+          tabindex="-1"
+          class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"
+        ></ol>
+      </div>
+      <section
+        aria-label="Notifications alt+T"
+        tabindex="-1"
+        aria-live="polite"
+        aria-relevant="additions text"
+        aria-atomic="false"
+      ></section>
+      <div class="min-h-screen" bis_skin_checked="1">
+        <section
+          class="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-cover bg-center"
+            style="
+              background-image: url('./index_files/hero-renewable-egypt-DUpl0bSt.jpg');
+            "
+            bis_skin_checked="1"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background"
+              bis_skin_checked="1"
+            ></div>
+          </div>
+          <div
+            class="relative z-10 container mx-auto px-4 py-20 text-center"
+            bis_skin_checked="1"
+          >
+            <div
+              class="mb-6 animate-fade-in flex justify-center"
+              bis_skin_checked="1"
+            >
+              <img
+                src="./index_files/environment-day-logo-B3hVkdqr.png"
+                alt="شعار مسابقة يوم البيئة الوطني"
+                class="h-24 md:h-32 object-contain"
+              />
+            </div>
+            <div
+              class="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-6 py-3 rounded-full mb-6 animate-fade-in border border-primary/20"
+              bis_skin_checked="1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-sparkles w-5 h-5 text-primary"
+              >
+                <path
+                  d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+                ></path>
+                <path d="M20 3v4"></path>
+                <path d="M22 5h-4"></path>
+                <path d="M4 17v2"></path>
+                <path d="M5 18H3"></path></svg
+              ><span class="text-sm font-bold text-primary"
+                >رحلة نحو مستقبل أخضر</span
+              >
+            </div>
+            <h1
+              class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in"
+              style="animation-delay: 0.1s"
+            >
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent"
+                >الطاقة المتجددة في مصر</span
+              >
+            </h1>
+            <p
+              class="text-lg md:text-2xl text-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in leading-relaxed"
+              style="animation-delay: 0.2s"
+            >
+              اكتشف كيف تساعد الطاقة النظيفة في بناء مستقبل مصر المشرق!<br />رحلة
+              تعليمية ممتعة للطلاب عن الشمس والرياح والماء
+            </p>
+            <div
+              class="flex flex-wrap gap-4 justify-center animate-fade-in"
+              style="animation-delay: 0.3s"
+              bis_skin_checked="1"
+            >
+              <div
+                class="bg-card/90 backdrop-blur-sm px-6 py-4 rounded-2xl shadow-[var(--shadow-card)] border border-border/50"
+                bis_skin_checked="1"
+              >
+                <div
+                  class="text-3xl font-bold text-primary"
+                  bis_skin_checked="1"
+                >
+                  🌞
+                </div>
+                <div
+                  class="text-sm text-muted-foreground mt-1"
+                  bis_skin_checked="1"
+                >
+                  طاقة شمسية
+                </div>
+              </div>
+              <div
+                class="bg-card/90 backdrop-blur-sm px-6 py-4 rounded-2xl shadow-[var(--shadow-card)] border border-border/50"
+                bis_skin_checked="1"
+              >
+                <div
+                  class="text-3xl font-bold text-secondary"
+                  bis_skin_checked="1"
+                >
+                  💨
+                </div>
+                <div
+                  class="text-sm text-muted-foreground mt-1"
+                  bis_skin_checked="1"
+                >
+                  طاقة الرياح
+                </div>
+              </div>
+              <div
+                class="bg-card/90 backdrop-blur-sm px-6 py-4 rounded-2xl shadow-[var(--shadow-card)] border border-border/50"
+                bis_skin_checked="1"
+              >
+                <div
+                  class="text-3xl font-bold text-nature"
+                  bis_skin_checked="1"
+                >
+                  💧
+                </div>
+                <div
+                  class="text-sm text-muted-foreground mt-1"
+                  bis_skin_checked="1"
+                >
+                  طاقة المياه
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-20 px-4">
+          <div class="container mx-auto" bis_skin_checked="1">
+            <div class="text-center mb-16" bis_skin_checked="1">
+              <div
+                class="inline-flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-full mb-4"
+                bis_skin_checked="1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-lightbulb w-5 h-5 text-accent"
+                >
+                  <path
+                    d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"
+                  ></path>
+                  <path d="M9 18h6"></path>
+                  <path d="M10 22h4"></path></svg
+                ><span class="text-sm font-bold text-accent"
+                  >لماذا الطاقة المتجددة؟</span
+                >
+              </div>
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                أهمية الطاقة المتجددة
+              </h2>
+              <p
+                class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+              >
+                اكتشف كيف تساهم الطاقة المتجددة في بناء مستقبل أفضل لمصر
+                وللعالم!
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
+              bis_skin_checked="1"
+            >
+              <div
+                class="relative rounded-3xl overflow-hidden shadow-[var(--shadow-hover)] h-[400px] group"
+                bis_skin_checked="1"
+              >
+                <img
+                  src="./index_files/egypt-renewable-map-D2cJ0paV.png"
+                  alt="خريطة مصر والطاقة المتجددة"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent flex items-end p-8"
+                  bis_skin_checked="1"
+                >
+                  <div class="text-background" bis_skin_checked="1">
+                    <h3 class="text-2xl font-bold mb-2">مصر الخضراء</h3>
+                    <p class="text-background/90">
+                      مستقبل مشرق بالطاقة المتجددة
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 gap-4" bis_skin_checked="1">
+                <div
+                  class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/30"
+                  style="animation-delay: 0s"
+                  bis_skin_checked="1"
+                >
+                  <div class="p-5" bis_skin_checked="1">
+                    <div class="flex gap-4" bis_skin_checked="1">
+                      <div
+                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                        bis_skin_checked="1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-shield w-6 h-6 text-primary"
+                        >
+                          <path
+                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div bis_skin_checked="1">
+                        <h3 class="text-base font-bold mb-1">حماية البيئة</h3>
+                        <p
+                          class="text-sm text-muted-foreground leading-relaxed"
+                        >
+                          الطاقة المتجددة تقلل التلوث وتساعد في مكافحة الاحتباس
+                          الحراري
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/30"
+                  style="animation-delay: 0.1s"
+                  bis_skin_checked="1"
+                >
+                  <div class="p-5" bis_skin_checked="1">
+                    <div class="flex gap-4" bis_skin_checked="1">
+                      <div
+                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                        bis_skin_checked="1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-zap w-6 h-6 text-primary"
+                        >
+                          <path
+                            d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div bis_skin_checked="1">
+                        <h3 class="text-base font-bold mb-1">
+                          مصدر دائم للطاقة
+                        </h3>
+                        <p
+                          class="text-sm text-muted-foreground leading-relaxed"
+                        >
+                          الشمس والرياح والمياه متجددة، فلا تنفد مثل الوقود
+                          الأحفوري
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/30"
+                  style="animation-delay: 0.2s"
+                  bis_skin_checked="1"
+                >
+                  <div class="p-5" bis_skin_checked="1">
+                    <div class="flex gap-4" bis_skin_checked="1">
+                      <div
+                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                        bis_skin_checked="1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-trending-up w-6 h-6 text-primary"
+                        >
+                          <polyline
+                            points="22 7 13.5 15.5 8.5 10.5 2 17"
+                          ></polyline>
+                          <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                      </div>
+                      <div bis_skin_checked="1">
+                        <h3 class="text-base font-bold mb-1">
+                          أمان الطاقة لمصر
+                        </h3>
+                        <p
+                          class="text-sm text-muted-foreground leading-relaxed"
+                        >
+                          توفر مصر مصدر طاقة مستقل يقلل الاعتماد على استيراد
+                          الوقود
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/30"
+                  style="animation-delay: 0.3s"
+                  bis_skin_checked="1"
+                >
+                  <div class="p-5" bis_skin_checked="1">
+                    <div class="flex gap-4" bis_skin_checked="1">
+                      <div
+                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                        bis_skin_checked="1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-users w-6 h-6 text-primary"
+                        >
+                          <path
+                            d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                          ></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                      </div>
+                      <div bis_skin_checked="1">
+                        <h3 class="text-base font-bold mb-1">فرص عمل جديدة</h3>
+                        <p
+                          class="text-sm text-muted-foreground leading-relaxed"
+                        >
+                          مشاريع الطاقة النظيفة تخلق وظائف جديدة للشباب في
+                          المستقبل
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/30"
+                  style="animation-delay: 0.4s"
+                  bis_skin_checked="1"
+                >
+                  <div class="p-5" bis_skin_checked="1">
+                    <div class="flex gap-4" bis_skin_checked="1">
+                      <div
+                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                        bis_skin_checked="1"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-lightbulb w-6 h-6 text-primary"
+                        >
+                          <path
+                            d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"
+                          ></path>
+                          <path d="M9 18h6"></path>
+                          <path d="M10 22h4"></path>
+                        </svg>
+                      </div>
+                      <div bis_skin_checked="1">
+                        <h3 class="text-base font-bold mb-1">
+                          تكنولوجيا مبتكرة
+                        </h3>
+                        <p
+                          class="text-sm text-muted-foreground leading-relaxed"
+                        >
+                          تشجع الطلاب على التعلم والابتكار في مجالات علمية حديثة
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-r from-accent/10 via-primary/10 to-secondary/10 rounded-3xl p-8 text-center border border-border/50"
+              bis_skin_checked="1"
+            >
+              <h3 class="text-2xl font-bold mb-3">💡 هل تعلم؟</h3>
+              <p
+                class="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                مصر تستهدف إنتاج
+                <span class="font-bold text-primary">42% من الكهرباء</span> من
+                مصادر الطاقة المتجددة بحلول عام 2035! شارك في هذه الرحلة وكن
+                جزءًا من المستقبل الأخضر.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="py-20 px-4 bg-muted/30">
+          <div class="container mx-auto" bis_skin_checked="1">
+            <div class="text-center mb-16" bis_skin_checked="1">
+              <div
+                class="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4"
+                bis_skin_checked="1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-map-pin w-5 h-5 text-primary"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle></svg
+                ><span class="text-sm font-bold text-primary"
+                  >القسم الثاني</span
+                >
+              </div>
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                نماذج تطبيقية في مصر
+              </h2>
+              <p
+                class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+              >
+                شاهد مشاريع الطاقة المتجددة الحقيقية في بلدنا الحبيب مصر
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
+              bis_skin_checked="1"
+            >
+              <div
+                class="rounded-lg bg-card text-card-foreground shadow-sm overflow-hidden group hover:shadow-[var(--shadow-hover)] transition-all duration-500 border-2 hover:border-primary/30"
+                bis_skin_checked="1"
+              >
+                <div class="relative h-64 overflow-hidden" bis_skin_checked="1">
+                  <img
+                    src="./index_files/solar-plant-D6JLYfi0.jpg"
+                    alt="مجمع بنبان للطاقة الشمسية"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-solar/20 to-solar/5 to-transparent"
+                    bis_skin_checked="1"
+                  ></div>
+                  <div
+                    class="absolute top-4 right-4 w-14 h-14 rounded-2xl bg-card/90 backdrop-blur-sm flex items-center justify-center"
+                    bis_skin_checked="1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-sun w-7 h-7 text-solar"
+                    >
+                      <circle cx="12" cy="12" r="4"></circle>
+                      <path d="M12 2v2"></path>
+                      <path d="M12 20v2"></path>
+                      <path d="m4.93 4.93 1.41 1.41"></path>
+                      <path d="m17.66 17.66 1.41 1.41"></path>
+                      <path d="M2 12h2"></path>
+                      <path d="M20 12h2"></path>
+                      <path d="m6.34 17.66-1.41 1.41"></path>
+                      <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="p-6" bis_skin_checked="1">
+                  <div
+                    class="flex items-start justify-between mb-3"
+                    bis_skin_checked="1"
+                  >
+                    <h3 class="text-2xl font-bold">
+                      مجمع بنبان للطاقة الشمسية
+                    </h3>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 text-muted-foreground mb-3"
+                    bis_skin_checked="1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-map-pin w-4 h-4"
+                    >
+                      <path
+                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                      ></path>
+                      <circle cx="12" cy="10" r="3"></circle></svg
+                    ><span class="text-sm">أسوان</span
+                    ><span class="text-sm">•</span
+                    ><span class="text-sm font-bold text-primary"
+                      >1,465 ميجاوات</span
+                    >
+                  </div>
+                  <p class="text-muted-foreground mb-4 leading-relaxed">
+                    أكبر محطة للطاقة الشمسية في أفريقيا! تنتج كهرباء نظيفة تكفي
+                    لإنارة 420,000 منزل
+                  </p>
+                  <div
+                    class="bg-gradient-to-r from-solar/20 to-solar/5 rounded-xl p-4 border border-border/50"
+                    bis_skin_checked="1"
+                  >
+                    <p class="text-sm font-semibold flex items-start gap-2">
+                      <span class="text-lg">✨</span
+                      ><span
+                        >مساحة المجمع تعادل 37 مليون متر مربع - أكبر من 5,000
+                        ملعب كرة قدم!</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg bg-card text-card-foreground shadow-sm overflow-hidden group hover:shadow-[var(--shadow-hover)] transition-all duration-500 border-2 hover:border-primary/30"
+                bis_skin_checked="1"
+              >
+                <div class="relative h-64 overflow-hidden" bis_skin_checked="1">
+                  <img
+                    src="./index_files/wind-farm-D_HOjmYq.jpg"
+                    alt="مزرعة رياح خليج السويس"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-wind/20 to-wind/5 to-transparent"
+                    bis_skin_checked="1"
+                  ></div>
+                  <div
+                    class="absolute top-4 right-4 w-14 h-14 rounded-2xl bg-card/90 backdrop-blur-sm flex items-center justify-center"
+                    bis_skin_checked="1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-wind w-7 h-7 text-wind"
+                    >
+                      <path d="M12.8 19.6A2 2 0 1 0 14 16H2"></path>
+                      <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path>
+                      <path d="M9.8 4.4A2 2 0 1 1 11 8H2"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="p-6" bis_skin_checked="1">
+                  <div
+                    class="flex items-start justify-between mb-3"
+                    bis_skin_checked="1"
+                  >
+                    <h3 class="text-2xl font-bold">مزرعة رياح خليج السويس</h3>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 text-muted-foreground mb-3"
+                    bis_skin_checked="1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-map-pin w-4 h-4"
+                    >
+                      <path
+                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                      ></path>
+                      <circle cx="12" cy="10" r="3"></circle></svg
+                    ><span class="text-sm">البحر الأحمر</span
+                    ><span class="text-sm">•</span
+                    ><span class="text-sm font-bold text-primary"
+                      >580 ميجاوات</span
+                    >
+                  </div>
+                  <p class="text-muted-foreground mb-4 leading-relaxed">
+                    توربينات الرياح العملاقة تحول طاقة الرياح إلى كهرباء نظيفة
+                    للمنازل والمصانع
+                  </p>
+                  <div
+                    class="bg-gradient-to-r from-wind/20 to-wind/5 rounded-xl p-4 border border-border/50"
+                    bis_skin_checked="1"
+                  >
+                    <p class="text-sm font-semibold flex items-start gap-2">
+                      <span class="text-lg">✨</span
+                      ><span
+                        >كل توربين يمكنه إنتاج طاقة كافية لـ 1,500 منزل
+                        يوميًا!</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-card rounded-3xl p-8 shadow-[var(--shadow-card)] border border-border/50"
+              bis_skin_checked="1"
+            >
+              <h3
+                class="text-2xl font-bold text-center mb-8 flex items-center justify-center gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-trending-up w-6 h-6 text-primary"
+                >
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline></svg
+                ><span>مصر في أرقام</span>
+              </h3>
+              <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-6"
+                bis_skin_checked="1"
+              >
+                <div
+                  class="text-center p-4 rounded-2xl bg-gradient-to-b from-muted/50 to-transparent hover:from-primary/5 transition-colors"
+                  bis_skin_checked="1"
+                >
+                  <div
+                    class="text-3xl md:text-4xl font-bold text-primary mb-2"
+                    bis_skin_checked="1"
+                  >
+                    42%
+                  </div>
+                  <div class="text-sm font-bold mb-1" bis_skin_checked="1">
+                    هدف 2035
+                  </div>
+                  <div
+                    class="text-xs text-muted-foreground"
+                    bis_skin_checked="1"
+                  >
+                    من الكهرباء من مصادر متجددة
+                  </div>
+                </div>
+                <div
+                  class="text-center p-4 rounded-2xl bg-gradient-to-b from-muted/50 to-transparent hover:from-primary/5 transition-colors"
+                  bis_skin_checked="1"
+                >
+                  <div
+                    class="text-3xl md:text-4xl font-bold text-primary mb-2"
+                    bis_skin_checked="1"
+                  >
+                    3,000+
+                  </div>
+                  <div class="text-sm font-bold mb-1" bis_skin_checked="1">
+                    ميجاوات
+                  </div>
+                  <div
+                    class="text-xs text-muted-foreground"
+                    bis_skin_checked="1"
+                  >
+                    قدرة الطاقة الشمسية الحالية
+                  </div>
+                </div>
+                <div
+                  class="text-center p-4 rounded-2xl bg-gradient-to-b from-muted/50 to-transparent hover:from-primary/5 transition-colors"
+                  bis_skin_checked="1"
+                >
+                  <div
+                    class="text-3xl md:text-4xl font-bold text-primary mb-2"
+                    bis_skin_checked="1"
+                  >
+                    1.4+
+                  </div>
+                  <div class="text-sm font-bold mb-1" bis_skin_checked="1">
+                    جيجاوات
+                  </div>
+                  <div
+                    class="text-xs text-muted-foreground"
+                    bis_skin_checked="1"
+                  >
+                    من طاقة الرياح
+                  </div>
+                </div>
+                <div
+                  class="text-center p-4 rounded-2xl bg-gradient-to-b from-muted/50 to-transparent hover:from-primary/5 transition-colors"
+                  bis_skin_checked="1"
+                >
+                  <div
+                    class="text-3xl md:text-4xl font-bold text-primary mb-2"
+                    bis_skin_checked="1"
+                  >
+                    100+
+                  </div>
+                  <div class="text-sm font-bold mb-1" bis_skin_checked="1">
+                    مليار $
+                  </div>
+                  <div
+                    class="text-xs text-muted-foreground"
+                    bis_skin_checked="1"
+                  >
+                    استثمارات في الطاقة النظيفة
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-20 px-4">
+          <div class="container mx-auto" bis_skin_checked="1">
+            <div class="text-center mb-16" bis_skin_checked="1">
+              <div
+                class="inline-flex items-center gap-2 bg-nature/10 px-4 py-2 rounded-full mb-4"
+                bis_skin_checked="1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-leaf w-5 h-5 text-nature"
+                >
+                  <path
+                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
+                  ></path>
+                  <path
+                    d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"
+                  ></path></svg
+                ><span class="text-sm font-bold text-nature">القسم الثالث</span>
+              </div>
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                الطاقة المتجددة والتغير المناخي
+              </h2>
+              <p
+                class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+              >
+                كيف تساعد الطاقة النظيفة في حماية كوكبنا من التغيرات المناخية
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
+              bis_skin_checked="1"
+            >
+              <div
+                class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-nature/30"
+                bis_skin_checked="1"
+              >
+                <div class="p-6" bis_skin_checked="1">
+                  <div class="flex items-start gap-4" bis_skin_checked="1">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-nature/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                      bis_skin_checked="1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-cloud-rain w-8 h-8 text-nature"
+                      >
+                        <path
+                          d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
+                        ></path>
+                        <path d="M16 14v6"></path>
+                        <path d="M8 14v6"></path>
+                        <path d="M12 16v6"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1" bis_skin_checked="1">
+                      <div
+                        class="flex items-center justify-between mb-2"
+                        bis_skin_checked="1"
+                      >
+                        <h3 class="text-xl font-bold">هواء نظيف</h3>
+                        <span
+                          class="text-xs font-bold text-nature bg-nature/10 px-3 py-1 rounded-full"
+                          >صفر انبعاثات</span
+                        >
+                      </div>
+                      <p class="text-muted-foreground leading-relaxed">
+                        الطاقة المتجددة لا تسبب تلوث الهواء، مما يحافظ على صحتنا
+                        وبيئتنا
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-nature/30"
+                bis_skin_checked="1"
+              >
+                <div class="p-6" bis_skin_checked="1">
+                  <div class="flex items-start gap-4" bis_skin_checked="1">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-nature/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                      bis_skin_checked="1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-tree-pine w-8 h-8 text-nature"
+                      >
+                        <path
+                          d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"
+                        ></path>
+                        <path d="M12 22v-3"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1" bis_skin_checked="1">
+                      <div
+                        class="flex items-center justify-between mb-2"
+                        bis_skin_checked="1"
+                      >
+                        <h3 class="text-xl font-bold">حماية الطبيعة</h3>
+                        <span
+                          class="text-xs font-bold text-nature bg-nature/10 px-3 py-1 rounded-full"
+                          >مستدام 100%</span
+                        >
+                      </div>
+                      <p class="text-muted-foreground leading-relaxed">
+                        تقلل من قطع الأشجار وتحافظ على الغابات والحياة البرية
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-nature/30"
+                bis_skin_checked="1"
+              >
+                <div class="p-6" bis_skin_checked="1">
+                  <div class="flex items-start gap-4" bis_skin_checked="1">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-nature/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                      bis_skin_checked="1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-recycle w-8 h-8 text-nature"
+                      >
+                        <path
+                          d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"
+                        ></path>
+                        <path
+                          d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"
+                        ></path>
+                        <path d="m14 16-3 3 3 3"></path>
+                        <path d="M8.293 13.596 7.196 9.5 3.1 10.598"></path>
+                        <path
+                          d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"
+                        ></path>
+                        <path d="m13.378 9.633 4.096 1.098 1.097-4.096"></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1" bis_skin_checked="1">
+                      <div
+                        class="flex items-center justify-between mb-2"
+                        bis_skin_checked="1"
+                      >
+                        <h3 class="text-xl font-bold">موارد متجددة</h3>
+                        <span
+                          class="text-xs font-bold text-nature bg-nature/10 px-3 py-1 rounded-full"
+                          >طاقة لا تنتهي</span
+                        >
+                      </div>
+                      <p class="text-muted-foreground leading-relaxed">
+                        الشمس والرياح لا تنفد أبدًا، على عكس البترول والفحم
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg bg-card text-card-foreground shadow-sm group hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border-2 hover:border-nature/30"
+                bis_skin_checked="1"
+              >
+                <div class="p-6" bis_skin_checked="1">
+                  <div class="flex items-start gap-4" bis_skin_checked="1">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-nature/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
+                      bis_skin_checked="1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-leaf w-8 h-8 text-nature"
+                      >
+                        <path
+                          d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
+                        ></path>
+                        <path
+                          d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="flex-1" bis_skin_checked="1">
+                      <div
+                        class="flex items-center justify-between mb-2"
+                        bis_skin_checked="1"
+                      >
+                        <h3 class="text-xl font-bold">كوكب أخضر</h3>
+                        <span
+                          class="text-xs font-bold text-nature bg-nature/10 px-3 py-1 rounded-full"
+                          >مناخ صحي</span
+                        >
+                      </div>
+                      <p class="text-muted-foreground leading-relaxed">
+                        تساعد في تقليل الاحتباس الحراري والحفاظ على كوكب الأرض
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-br from-nature/10 via-secondary/10 to-accent/10 rounded-3xl p-8 md:p-12 border border-border/50"
+              bis_skin_checked="1"
+            >
+              <div class="text-center mb-8" bis_skin_checked="1">
+                <h3 class="text-2xl md:text-3xl font-bold mb-3">
+                  🌍 كيف يمكنك المساعدة؟
+                </h3>
+                <p
+                  class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+                >
+                  كل واحد منا يستطيع أن يساهم في حماية البيئة! إليك بعض الخطوات
+                  البسيطة:
+                </p>
+              </div>
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
+                bis_skin_checked="1"
+              >
+                <div
+                  class="bg-card/80 backdrop-blur-sm rounded-2xl p-5 border border-border/50 hover:border-nature/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-[var(--shadow-card)]"
+                  bis_skin_checked="1"
+                >
+                  <div class="flex items-start gap-3" bis_skin_checked="1">
+                    <span class="text-3xl">💡</span>
+                    <p class="text-sm font-semibold leading-relaxed pt-1">
+                      أطفئ الأنوار عند الخروج من الغرفة
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-card/80 backdrop-blur-sm rounded-2xl p-5 border border-border/50 hover:border-nature/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-[var(--shadow-card)]"
+                  bis_skin_checked="1"
+                >
+                  <div class="flex items-start gap-3" bis_skin_checked="1">
+                    <span class="text-3xl">♻️</span>
+                    <p class="text-sm font-semibold leading-relaxed pt-1">
+                      أعد تدوير الورق والبلاستيك
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-card/80 backdrop-blur-sm rounded-2xl p-5 border border-border/50 hover:border-nature/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-[var(--shadow-card)]"
+                  bis_skin_checked="1"
+                >
+                  <div class="flex items-start gap-3" bis_skin_checked="1">
+                    <span class="text-3xl">🚶</span>
+                    <p class="text-sm font-semibold leading-relaxed pt-1">
+                      امش أو اركب الدراجة بدلاً من السيارة
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-card/80 backdrop-blur-sm rounded-2xl p-5 border border-border/50 hover:border-nature/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-[var(--shadow-card)]"
+                  bis_skin_checked="1"
+                >
+                  <div class="flex items-start gap-3" bis_skin_checked="1">
+                    <span class="text-3xl">💧</span>
+                    <p class="text-sm font-semibold leading-relaxed pt-1">
+                      وفر في استخدام المياه
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-card/80 backdrop-blur-sm rounded-2xl p-5 border border-border/50 hover:border-nature/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-[var(--shadow-card)]"
+                  bis_skin_checked="1"
+                >
+                  <div class="flex items-start gap-3" bis_skin_checked="1">
+                    <span class="text-3xl">🌱</span>
+                    <p class="text-sm font-semibold leading-relaxed pt-1">
+                      ازرع شجرة في حديقة منزلك
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-card/80 backdrop-blur-sm rounded-2xl p-5 border border-border/50 hover:border-nature/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-[var(--shadow-card)]"
+                  bis_skin_checked="1"
+                >
+                  <div class="flex items-start gap-3" bis_skin_checked="1">
+                    <span class="text-3xl">📚</span>
+                    <p class="text-sm font-semibold leading-relaxed pt-1">
+                      تعلم المزيد وعلّم الآخرين
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-card rounded-2xl p-6 text-center border border-border/50"
+                bis_skin_checked="1"
+              >
+                <p class="text-lg font-bold text-primary mb-2">
+                  معًا نستطيع أن نصنع الفرق! 🌟
+                </p>
+                <p class="text-muted-foreground leading-relaxed">
+                  أنت جزء من جيل المستقبل الذي سيحمي كوكب الأرض. ابدأ اليوم
+                  بخطوات صغيرة لتصنع تأثيرًا كبيرًا!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer
+          class="bg-gradient-to-b from-background to-muted/50 py-12 px-4 border-t border-border/50"
+        >
+          <div class="container mx-auto" bis_skin_checked="1">
+            <div
+              class="flex flex-col items-center gap-6 text-center"
+              bis_skin_checked="1"
+            >
+              <div class="flex items-center gap-3" bis_skin_checked="1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-sun w-6 h-6 text-solar"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path></svg
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-wind w-6 h-6 text-wind"
+                >
+                  <path d="M12.8 19.6A2 2 0 1 0 14 16H2"></path>
+                  <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path>
+                  <path d="M9.8 4.4A2 2 0 1 1 11 8H2"></path></svg
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-droplets w-6 h-6 text-secondary"
+                >
+                  <path
+                    d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"
+                  ></path>
+                  <path
+                    d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"
+                  ></path>
+                </svg>
+              </div>
+              <div bis_skin_checked="1">
+                <h3 class="text-xl font-bold mb-2">الطاقة المتجددة في مصر</h3>
+                <p class="text-muted-foreground">
+                  موقع تعليمي للطلاب حول مستقبل الطاقة النظيفة
+                </p>
+              </div>
+              <div
+                class="flex items-center gap-2 text-sm text-muted-foreground"
+                bis_skin_checked="1"
+              >
+                <span>صُنع بواسطة بيشوي ظريف - مسابقة يوم البيئة الوطني</span>
+              </div>
+              <div class="text-xs text-muted-foreground" bis_skin_checked="1">
+                جميع الحقوق محفوظة © 2025
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
